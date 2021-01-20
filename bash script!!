@@ -11,6 +11,7 @@ sudo apt install unzip curl git -y
 sudo add-apt-repository universe
 
 #update & upgrade
+sudo apt update && apt upgrade -y
 
 
 #Install & Setup Web Server
@@ -18,7 +19,7 @@ sudo apt install nginx -y
 
 
 #Install & Setup Mysql Database
-sudo mysql install mysql-server mysql-client
+sudo apt install mysql-server mysql-client
 sudo mysql -u root -p <myQuery
   CREATE USER 'roldan'@'%' indentified by 'roldan@hive'123';
   GRANT ALL PRIVILEGES ON *.* to 'roldan'@'%';
