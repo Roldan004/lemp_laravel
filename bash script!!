@@ -21,7 +21,7 @@ sudo apt install nginx -y
 #Install & Setup Mysql Database
 sudo apt install mysql-server mysql-client
 sudo mysql -u root -p <myQuery
-  CREATE USER 'roldan'@'%' indentified by 'roldan@hive'123';
+  CREATE USER 'roldan'@'%' identified by 'roldan@hive123';
   GRANT ALL PRIVILEGES ON *.* to 'roldan'@'%';
   DROP USER ''@'localhost'
   DROP DATABASE test
