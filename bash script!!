@@ -1,0 +1,72 @@
+#!/bin/bash
+#
+#
+#LEMP Stack Installation
+#
+
+#Install git, curl, unzip
+sudo apt install unzip curl git -y
+
+#Add Universal
+sudo add-apt-repository universe
+
+#update & upgrade
+
+
+#Install & Setup Web Server
+sudo apt install nginx -y
+
+
+#Install & Setup Mysql Database
+sudo mysql install mysql-server mysql-client
+sudo mysql -u root -p <myQuery
+  CREATE USER 'roldan'@'%' indentified by 'roldan@hive'123';
+  GRANT ALL PRIVILEGES ON *.* to 'roldan'@'%';
+  DROP USER ''@'localhost'
+  DROP DATABASE test
+  FLUSH PRIVILEGES;
+myQuery
+
+#Install & Setup PHP
+sudo apt install php7.2 -y
+sudo apt install php7.2-bcmath php7.2-curl php7.2-dev php7.2-gd php7.2-intl php7.2-mbstring php7.2-xml php7.2-zip php7.2-mysql php7.2-cli libapache2-mod-php -y
+
+#Create information file
+sudo echo "<?php phpinfo();?>" >> /var/www/html/info.php
+
+# downloading & installing composer for php
+cd ~
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+# choose type of deployment u want
+
+# deploy laravel via git
+git clone https://github.com/laravel/laravel.git
+
+# deploy laravel via composer
+composer create-project --prefer-dist laravel/laravel project
+
+# install some dependencies for the project
+composer install
+
+# proper permissions for laravel files
+chown -R www-data:www-data /var/www/html/laravel
+chmod -R 775 /var/www/html/laravel
+chmod -R 777 /var/www/html/laravel/storage
+
+
+# for migration or fresh laravel project
+mv .env.example .env
+
+# generate base64 keys
+php artisan key:generate
+
+# edit .env APP_KEY looks something like this
+APP_KEY=base64:HFdS7c9rhDp+AeHu7kc2OLBPuxHqq2BQ/1gfFWEpoAk=
+
+# dont forget to restart webserver service (APACHE)
+sudo a2enmod rewrite
+sudo service apache2 restart
+
