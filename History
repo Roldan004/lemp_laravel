@@ -1,0 +1,110 @@
+1  sudo apt update;sudo apt upgrade -y
+    2  sudo apt install nginx -y
+    3  sudo apt install git unzip curl -y
+    4  clear
+    5  sudo add-apt-repository universe
+    6  sudo apt install mysql-server mysql-client -y 
+    7  clear
+    8  sudo mysql -u root -p
+    9  clear
+   10  sudo apt install php7.2 -y
+   11  sudo apt-get purge apache2 -y
+   12  sudo apt-get autoremove -y
+   13  clear
+   14  sudo apt install php7.2-bcmath php7.2-curl php7.2-dev php7.2-gd php7.2-intl php7.2-mbstring php7.2-xml php7.2-zip php7.2-mysql php-cli libapache2-mod-php php7.2-dev php7.2-fpm -y
+   15  sudo curl -sS https://getcomposer.org/installer -o composer-setup.php
+   16  sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+   17  sudo rm composer-setup.php
+   18  clear
+   19  composer
+   20  clear
+   21  ls
+   22  clear
+   23  git clone https://github.com/laravel/laravel.git
+   24  ls
+   25  cd laravel/
+   26  clear
+   27  git branch
+   28  git branch -r
+   29  git checkout origin/7.x
+   30  clear
+   31  git checkout -b 7.x
+   32  clear
+   33  ls
+   34  git branch
+   35  clear
+   36  cd ..
+   37  sudo cp -rv laravel /var/www/html/
+   38  clear
+   39  ls
+   40  cd /var/www/html/
+   41  ls
+   42  clear
+   43  ls
+   44  cd laravel/
+   45  ls
+   46  sudo composer install
+   47  cd ..
+   48  clear
+   49  ls
+   50  sudo chmod -R 775 laravel
+   51  sudo chown -R www-data:www-data laravel
+   52  clear
+   53  cd laravel/
+   54  clear
+   55  ls
+   56  cd public/
+   57  pwd
+   58  cd /etc/nginx/sites-available/
+   59  ls
+   60  nano default 
+   61  curl ifconFIG.ME
+   62  clear
+   63  ls
+   64  sudo nano qrams.bes-houseofchicken.com.conf
+   65  cd /var/www/html/
+   66  ls
+   67  cd laravel/
+   68  pwd
+   69  cd public/
+   70  pwd
+   71  sudo nano /etc/nginx/sites-available/qrams.bes-houseofchicken.com.conf 
+   72  sudo nano /etc/php/7.2/fpm/php.ini 
+   73  clear
+   74  sudo service php7.2-fpm restart
+   75  sudo nginx -t
+   76  clear
+   77  ls
+   78  cd /etc/nginx/sites-available/
+   79  clear
+   80  ls
+   81  sudo ln -s /etc/nginx/sites-available/qrams.bes-houseofchicken.com.conf /etc/nginx/sites-enabled/qrams.bes-houseofchicken.com.conf
+   82  sudo nginx -t
+   83  sudo service nginx restart
+   84  ls
+   85  cd /var/www/html/
+   86  clear
+   87  ls
+   88  cd laravel/
+   89  clear
+   90  ls -al
+   91  sudo cp .env.example .env
+   92  clear
+   93  nano .env
+   94  clear
+   95  php artisan key:generate
+   96  sudo php artisan key:generate
+   97  clear
+   98  ls
+   99  clear
+  100  ls
+  101  cd
+  102  sudo php artisan key:generate
+  103  clear
+  104  sudo nano .ssh/authorized_keys 
+  105  clear
+  106  sudo add-apt-repository ppa:certbot/certbot
+  107  sudo apt install python-certbot-nginx
+  108  sudo certbot --nginx -d qrams.bes-houseofchicken.com
+  109  clear
+  110  history
