@@ -11,7 +11,7 @@ sudo apt install unzip curl git -y
 sudo add-apt-repository universe
 
 #update & upgrade
-sudo apt update && apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 
 #Install & Setup Web Server
