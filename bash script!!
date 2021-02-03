@@ -61,6 +61,13 @@ sudo composer install
 chmod -R 775 /var/www/html/laravel
 chown -R www-data:www-data /var/www/html/laravel
 
+#config nginx
+#sudo ln -s /etc/nginx/sites-available/ .conf
+#sudo nano /etc/php7.2/fpm/php.ini     (cgi.fix = 0)
+#sudo service php7.2-fpm restart
+
+
+
 # for migration or fresh laravel project
 sudo cp .env.example .env
 
